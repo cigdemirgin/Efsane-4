@@ -1,6 +1,14 @@
+import { useState, useEffect } from 'react';
+
 export default function TopSection({ submitted }) {
-  const classCondition =
-    document.getElementsByClassName('name-input').length === 0
+  const [classCondition, setClassCondition] = useState(false);
+
+  useEffect(() => {
+    
+    const inputExists = document.getElementsByClassName('name-input').length > 0;
+    setClassCondition(inputExists);
+  }, [submitted]);
+
   return (
     <div className='top-section'>
       <h1 className={submitted && !classCondition ? 'second-fade-in' : null}>
@@ -16,8 +24,9 @@ export default function TopSection({ submitted }) {
               ? './images/character1.png'
               : './images/character2.png'
           }
+          alt="Karakter Resmi"
         />
       </div>
     </div>
-  )
+  );
 }

@@ -38,7 +38,7 @@ export default function App() {
       <TopSection submitted={submitted} />
 
       {/*-----Input'unuz burada olacak----------*/}
-      <input className="name-input"  type="text"  maxlength="16" placeholder="Karakterinizin Adını Girin" required= "evet" disabled={submitted}/>
+      <input className="name-input"  type="text"  maxLength="16" placeholder="Karakterinizin Adını Girin" required= "evet" disabled={submitted}/>
       {/*-----Input'unuz burada olacak----------*/}
 
       <BottomSection submitted={submitted} playerName={playerName} />
